@@ -19,5 +19,19 @@
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "typescript": "4.5.2"
-  }
+  },
+  "description": "This is a Next.js project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpjbusiness/Fathym-Revamp-Plasmic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpjbusiness/Fathym-Revamp-Plasmic/issues"
+  },
+  "homepage": "https://github.com/mpjbusiness/Fathym-Revamp-Plasmic#readme"
 }
