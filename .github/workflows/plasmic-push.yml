@@ -1,7 +1,9 @@
 # Plasmic push workflow v1
-name: Build and deploy Plasmic app
+name: Build and Deploy Plasmic App
 
 on:
+  repository_dispatch:
+    types: [plasmic]
   push:
     branches:
       - main
@@ -34,7 +36,7 @@ jobs:
         with:
           run: build
           branch: main
-          skip_if_plasmic: true
+          skip_if_plasmic: false
       - id: gh-pages
         name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
@@ -42,3 +44,10 @@ jobs:
         with:
           branch: gh-pages
           folder: ${{ steps.build.outputs.publish_dir }}
+      # publish github artifacts
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ steps.build.outputs.publish_dir }}
+        with:
+          name: mcgear-random
+          path: ${{ steps.build.outputs.publish_dir }}
