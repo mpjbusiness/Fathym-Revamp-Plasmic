@@ -1,0 +1,99 @@
+.root:global(.__wab_instance) {
+  position: relative;
+}
+.freeBox__qv7Mq {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.freeBox__kjI2W {
+  display: flex;
+  flex-direction: column;
+}
+.freeBox__kjI2W > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.freeBox__kjI2W > :global(.__wab_flex-container) > *,
+.freeBox__kjI2W > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__kjI2W > :global(.__wab_flex-container) > picture > img,
+.freeBox__kjI2W
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 8px;
+}
+.slotTargetName {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(5, 5, 5) /* plasmic-token: NEon4Y--Z */;
+}
+.text__z1IMg {
+  font-size: 48px;
+}
+.freeBox__oHmdV {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.freeBox__oHmdV > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.freeBox__oHmdV > :global(.__wab_flex-container) > *,
+.freeBox__oHmdV > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__oHmdV > :global(.__wab_flex-container) > picture > img,
+.freeBox__oHmdV
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 8px;
+}
+.bullet__fvLv:global(.__wab_instance) {
+  position: relative;
+}
+.bullet___1RlWo:global(.__wab_instance) {
+  position: relative;
+}
+.bullet__hKNxl:global(.__wab_instance) {
+  position: relative;
+}
+.freeBox__mhQp9 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: calc(13px + 8px) !important;
+}
+.button___333Bj:global(.__wab_instance) {
+  position: relative;
+}
+.svg__bkJU {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__bi871 {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg___2G2Ls {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  object-fit: cover;
+}
