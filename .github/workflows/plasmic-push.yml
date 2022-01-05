@@ -49,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{ steps.build.outputs.publish_dir }}
         with:
-          name: mcgear-random
+          name: mpjbusiness-fathym-revamp-plasmic
           path: ${{ steps.build.outputs.publish_dir }}
