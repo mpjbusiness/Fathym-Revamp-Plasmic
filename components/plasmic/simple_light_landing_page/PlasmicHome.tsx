@@ -187,7 +187,7 @@ function PlasmicHome__RenderFunc(props: {
                 }
               </div>
             }
-            title={"Explore the solutions"}
+            title={"*Explore the solutions*"}
           >
             <p.Stack
               as={"div"}
