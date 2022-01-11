@@ -37,8 +37,8 @@ import Avatar from "../../Avatar"; // plasmic-import: KaqiTJspLoXd/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicTestimonial.module.css"; // plasmic-import: 3bjoCbyUtJy3/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicTestimonial.module.css"; // plasmic-import: 3bjoCbyUtJy3/css
 
 export type PlasmicTestimonial__VariantMembers = {};
 
@@ -64,10 +64,10 @@ function PlasmicTestimonial__RenderFunc(props: {
   variants: PlasmicTestimonial__VariantsArgs;
   args: PlasmicTestimonial__ArgsType;
   overrides: PlasmicTestimonial__OverridesType;
-  dataFetches?: PlasmicTestimonial__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -175,7 +175,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTestimonial__VariantsArgs;
     args?: PlasmicTestimonial__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicTestimonial__Fetches;
   } & Omit<PlasmicTestimonial__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicTestimonial__ArgsType, ReservedPropsType> &
@@ -202,13 +201,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicTestimonial__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicTestimonial__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

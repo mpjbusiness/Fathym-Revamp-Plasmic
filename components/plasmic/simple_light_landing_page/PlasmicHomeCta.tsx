@@ -40,8 +40,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicHomeCta.module.css"; // plasmic-import: dVsW3BamtUD/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicHomeCta.module.css"; // plasmic-import: dVsW3BamtUD/css
 
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: yHhRLRMc3i2M/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: laZZxNBpGmH4/icon
@@ -72,10 +72,10 @@ function PlasmicHomeCta__RenderFunc(props: {
   variants: PlasmicHomeCta__VariantsArgs;
   args: PlasmicHomeCta__ArgsType;
   overrides: PlasmicHomeCta__OverridesType;
-  dataFetches?: PlasmicHomeCta__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -194,7 +194,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHomeCta__VariantsArgs;
     args?: PlasmicHomeCta__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHomeCta__Fetches;
   } & Omit<PlasmicHomeCta__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHomeCta__ArgsType, ReservedPropsType> &
@@ -221,13 +220,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHomeCta__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHomeCta__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

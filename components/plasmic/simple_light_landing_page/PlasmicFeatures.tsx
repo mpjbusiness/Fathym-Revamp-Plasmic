@@ -44,8 +44,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicFeatures.module.css"; // plasmic-import: Jqbvgw6Ua3KP/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicFeatures.module.css"; // plasmic-import: Jqbvgw6Ua3KP/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: laZZxNBpGmH4/icon
 
@@ -67,18 +67,16 @@ export type PlasmicFeatures__OverridesType = {
   footer?: p.Flex<typeof Footer>;
 };
 
-export interface DefaultFeaturesProps {
-  dataFetches: PlasmicFeatures__Fetches;
-}
+export interface DefaultFeaturesProps {}
 
 function PlasmicFeatures__RenderFunc(props: {
   variants: PlasmicFeatures__VariantsArgs;
   args: PlasmicFeatures__ArgsType;
   overrides: PlasmicFeatures__OverridesType;
-  dataFetches?: PlasmicFeatures__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -118,8 +116,8 @@ function PlasmicFeatures__RenderFunc(props: {
             data-plasmic-name={"section"}
             data-plasmic-override={overrides.section}
             className={classNames("__wab_instance", sty.section)}
-            hasSubtitle={"hasSubtitle" as const}
-            hasTitle={"hasTitle" as const}
+            hasSubtitle={true}
+            hasTitle={true}
             subtitle={
               "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
             }
@@ -406,7 +404,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicFeatures__VariantsArgs;
     args?: PlasmicFeatures__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicFeatures__Fetches;
   } & Omit<PlasmicFeatures__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicFeatures__ArgsType, ReservedPropsType> &
@@ -433,13 +430,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicFeatures__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicFeatures__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

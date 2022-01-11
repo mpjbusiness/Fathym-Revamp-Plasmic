@@ -36,8 +36,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicAvatar.module.css"; // plasmic-import: KaqiTJspLoXd/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicAvatar.module.css"; // plasmic-import: KaqiTJspLoXd/css
 
 export type PlasmicAvatar__VariantMembers = {};
 
@@ -65,10 +65,10 @@ function PlasmicAvatar__RenderFunc(props: {
   variants: PlasmicAvatar__VariantsArgs;
   args: PlasmicAvatar__ArgsType;
   overrides: PlasmicAvatar__OverridesType;
-  dataFetches?: PlasmicAvatar__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -125,7 +125,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicAvatar__VariantsArgs;
     args?: PlasmicAvatar__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicAvatar__Fetches;
   } & Omit<PlasmicAvatar__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicAvatar__ArgsType, ReservedPropsType> &
@@ -152,13 +151,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicAvatar__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicAvatar__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

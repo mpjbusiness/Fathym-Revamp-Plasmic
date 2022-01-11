@@ -36,8 +36,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicBullet.module.css"; // plasmic-import: vSwW5z63HqDP/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicBullet.module.css"; // plasmic-import: vSwW5z63HqDP/css
 
 import Done24Pxsvg2Icon from "./icons/PlasmicIcon__Done24Pxsvg2"; // plasmic-import: n-Y8LhfdQwE2/icon
 
@@ -68,10 +68,10 @@ function PlasmicBullet__RenderFunc(props: {
   variants: PlasmicBullet__VariantsArgs;
   args: PlasmicBullet__ArgsType;
   overrides: PlasmicBullet__OverridesType;
-  dataFetches?: PlasmicBullet__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <p.Stack
@@ -121,7 +121,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicBullet__VariantsArgs;
     args?: PlasmicBullet__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicBullet__Fetches;
   } & Omit<PlasmicBullet__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicBullet__ArgsType, ReservedPropsType> &
@@ -148,13 +147,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicBullet__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicBullet__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

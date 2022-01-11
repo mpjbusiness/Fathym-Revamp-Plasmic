@@ -39,8 +39,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicHeader.module.css"; // plasmic-import: 8SI-4BeePs4/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicHeader.module.css"; // plasmic-import: 8SI-4BeePs4/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: laZZxNBpGmH4/icon
 
@@ -68,10 +68,10 @@ function PlasmicHeader__RenderFunc(props: {
   variants: PlasmicHeader__VariantsArgs;
   args: PlasmicHeader__ArgsType;
   overrides: PlasmicHeader__OverridesType;
-  dataFetches?: PlasmicHeader__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -191,7 +191,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHeader__VariantsArgs;
     args?: PlasmicHeader__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHeader__Fetches;
   } & Omit<PlasmicHeader__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHeader__ArgsType, ReservedPropsType> &
@@ -218,13 +217,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHeader__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHeader__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

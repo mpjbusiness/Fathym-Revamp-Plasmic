@@ -41,8 +41,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicFooter.module.css"; // plasmic-import: LSa4QycSwwp/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicFooter.module.css"; // plasmic-import: LSa4QycSwwp/css
 
 import LogoIcon from "./icons/PlasmicIcon__Logo"; // plasmic-import: -5IQo-2Lf3Zl/icon
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: yHhRLRMc3i2M/icon
@@ -78,10 +78,10 @@ function PlasmicFooter__RenderFunc(props: {
   variants: PlasmicFooter__VariantsArgs;
   args: PlasmicFooter__ArgsType;
   overrides: PlasmicFooter__OverridesType;
-  dataFetches?: PlasmicFooter__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -466,7 +466,7 @@ function PlasmicFooter__RenderFunc(props: {
               }
               fontSize={"small" as const}
               placeholder={"Your email" as const}
-              showEndIcon={"showEndIcon" as const}
+              showEndIcon={true}
             />
           </p.Stack>
         </p.Stack>
@@ -584,7 +584,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicFooter__VariantsArgs;
     args?: PlasmicFooter__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicFooter__Fetches;
   } & Omit<PlasmicFooter__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicFooter__ArgsType, ReservedPropsType> &
@@ -611,13 +610,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicFooter__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicFooter__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

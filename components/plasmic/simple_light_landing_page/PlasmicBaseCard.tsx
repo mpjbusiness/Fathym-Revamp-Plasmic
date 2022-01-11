@@ -36,8 +36,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicBaseCard.module.css"; // plasmic-import: Gko4s4ggttZk/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicBaseCard.module.css"; // plasmic-import: Gko4s4ggttZk/css
 
 export type PlasmicBaseCard__VariantMembers = {
   long: "long";
@@ -76,10 +76,10 @@ function PlasmicBaseCard__RenderFunc(props: {
   variants: PlasmicBaseCard__VariantsArgs;
   args: PlasmicBaseCard__ArgsType;
   overrides: PlasmicBaseCard__OverridesType;
-  dataFetches?: PlasmicBaseCard__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <p.Stack
@@ -155,7 +155,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicBaseCard__VariantsArgs;
     args?: PlasmicBaseCard__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicBaseCard__Fetches;
   } & Omit<PlasmicBaseCard__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicBaseCard__ArgsType, ReservedPropsType> &
@@ -182,13 +181,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicBaseCard__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicBaseCard__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

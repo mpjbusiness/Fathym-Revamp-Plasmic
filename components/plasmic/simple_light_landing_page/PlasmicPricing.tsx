@@ -45,8 +45,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicPricing.module.css"; // plasmic-import: 0NL0l1MZqsOW/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicPricing.module.css"; // plasmic-import: 0NL0l1MZqsOW/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: laZZxNBpGmH4/icon
 
@@ -69,18 +69,16 @@ export type PlasmicPricing__OverridesType = {
   footer?: p.Flex<typeof Footer>;
 };
 
-export interface DefaultPricingProps {
-  dataFetches: PlasmicPricing__Fetches;
-}
+export interface DefaultPricingProps {}
 
 function PlasmicPricing__RenderFunc(props: {
   variants: PlasmicPricing__VariantsArgs;
   args: PlasmicPricing__ArgsType;
   overrides: PlasmicPricing__OverridesType;
-  dataFetches?: PlasmicPricing__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -120,8 +118,8 @@ function PlasmicPricing__RenderFunc(props: {
             data-plasmic-name={"pricingSection"}
             data-plasmic-override={overrides.pricingSection}
             className={classNames("__wab_instance", sty.pricingSection)}
-            hasSubtitle={"hasSubtitle" as const}
-            hasTitle={"hasTitle" as const}
+            hasSubtitle={true}
+            hasTitle={true}
             subtitle={
               "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
             }
@@ -249,8 +247,8 @@ function PlasmicPricing__RenderFunc(props: {
             data-plasmic-name={"faqSection"}
             data-plasmic-override={overrides.faqSection}
             className={classNames("__wab_instance", sty.faqSection)}
-            hasSubtitle={"hasSubtitle" as const}
-            hasTitle={"hasTitle" as const}
+            hasSubtitle={true}
+            hasTitle={true}
             subtitle={
               "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
             }
@@ -332,7 +330,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPricing__VariantsArgs;
     args?: PlasmicPricing__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicPricing__Fetches;
   } & Omit<PlasmicPricing__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicPricing__ArgsType, ReservedPropsType> &
@@ -359,13 +356,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicPricing__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicPricing__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

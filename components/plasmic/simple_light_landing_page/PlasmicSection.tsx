@@ -36,8 +36,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicSection.module.css"; // plasmic-import: opDBHhnXpCbj/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicSection.module.css"; // plasmic-import: opDBHhnXpCbj/css
 
 export type PlasmicSection__VariantMembers = {
   color: "halfDark" | "dark";
@@ -93,10 +93,10 @@ function PlasmicSection__RenderFunc(props: {
   variants: PlasmicSection__VariantsArgs;
   args: PlasmicSection__ArgsType;
   overrides: PlasmicSection__OverridesType;
-  dataFetches?: PlasmicSection__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -241,7 +241,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSection__VariantsArgs;
     args?: PlasmicSection__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicSection__Fetches;
   } & Omit<PlasmicSection__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicSection__ArgsType, ReservedPropsType> &
@@ -268,13 +267,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicSection__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicSection__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

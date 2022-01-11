@@ -36,8 +36,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicIconLink.module.css"; // plasmic-import: BtJHEzrxOus/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicIconLink.module.css"; // plasmic-import: BtJHEzrxOus/css
 
 export type PlasmicIconLink__VariantMembers = {};
 
@@ -66,10 +66,10 @@ function PlasmicIconLink__RenderFunc(props: {
   variants: PlasmicIconLink__VariantsArgs;
   args: PlasmicIconLink__ArgsType;
   overrides: PlasmicIconLink__OverridesType;
-  dataFetches?: PlasmicIconLink__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -123,7 +123,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicIconLink__VariantsArgs;
     args?: PlasmicIconLink__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicIconLink__Fetches;
   } & Omit<PlasmicIconLink__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicIconLink__ArgsType, ReservedPropsType> &
@@ -150,13 +149,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicIconLink__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicIconLink__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

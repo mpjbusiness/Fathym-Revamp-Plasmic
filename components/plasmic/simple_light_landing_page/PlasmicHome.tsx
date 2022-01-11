@@ -44,8 +44,8 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
-import * as sty from "./PlasmicHome.module.css"; // plasmic-import: H_C24Ypq5Q4/css
+import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
+import sty from "./PlasmicHome.module.css"; // plasmic-import: H_C24Ypq5Q4/css
 
 import LightningIcon from "./icons/PlasmicIcon__Lightning"; // plasmic-import: DwWC_vMoX5NU/icon
 import HammerIcon from "./icons/PlasmicIcon__Hammer"; // plasmic-import: C5JNr10S0sWA/icon
@@ -73,18 +73,16 @@ export type PlasmicHome__OverridesType = {
   footer?: p.Flex<typeof Footer>;
 };
 
-export interface DefaultHomeProps {
-  dataFetches: PlasmicHome__Fetches;
-}
+export interface DefaultHomeProps {}
 
 function PlasmicHome__RenderFunc(props: {
   variants: PlasmicHome__VariantsArgs;
   args: PlasmicHome__ArgsType;
   overrides: PlasmicHome__OverridesType;
-  dataFetches?: PlasmicHome__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnO3CKcOkrIuu()
@@ -172,8 +170,8 @@ function PlasmicHome__RenderFunc(props: {
             data-plasmic-name={"solutions"}
             data-plasmic-override={overrides.solutions}
             className={classNames("__wab_instance", sty.solutions)}
-            hasSubtitle={"hasSubtitle" as const}
-            hasTitle={"hasTitle" as const}
+            hasSubtitle={true}
+            hasTitle={true}
             subtitle={
               <div
                 className={classNames(
@@ -187,7 +185,7 @@ function PlasmicHome__RenderFunc(props: {
                 }
               </div>
             }
-            title={"*Explore the solutions*"}
+            title={"Explore the solutions"}
           >
             <p.Stack
               as={"div"}
@@ -266,7 +264,7 @@ function PlasmicHome__RenderFunc(props: {
                           role={"img"}
                         />
                       }
-                      long={"long" as const}
+                      long={true}
                       title={"LowCodeUnit"}
                     />
                   ) : null}
@@ -313,7 +311,7 @@ function PlasmicHome__RenderFunc(props: {
                         role={"img"}
                       />
                     }
-                    long={"long" as const}
+                    long={true}
                     title={"IoT Ensemble"}
                   />
 
@@ -359,7 +357,7 @@ function PlasmicHome__RenderFunc(props: {
                         role={"img"}
                       />
                     }
-                    long={"long" as const}
+                    long={true}
                     title={"Habistack"}
                   />
 
@@ -405,7 +403,7 @@ function PlasmicHome__RenderFunc(props: {
                         role={"img"}
                       />
                     }
-                    long={"long" as const}
+                    long={true}
                     title={"pROADject"}
                   />
                 </p.Stack>
@@ -436,8 +434,8 @@ function PlasmicHome__RenderFunc(props: {
             data-plasmic-name={"validation"}
             data-plasmic-override={overrides.validation}
             className={classNames("__wab_instance", sty.validation)}
-            hasSubtitle={"hasSubtitle" as const}
-            hasTitle={"hasTitle" as const}
+            hasSubtitle={true}
+            hasTitle={true}
             subtitle={
               "Fathym partners with software and hardware companies from all over."
             }
@@ -616,7 +614,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHome__VariantsArgs;
     args?: PlasmicHome__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHome__Fetches;
   } & Omit<PlasmicHome__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHome__ArgsType, ReservedPropsType> &
@@ -643,13 +640,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHome__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHome__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
