@@ -36,6 +36,7 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicFeatureCard.module.css"; // plasmic-import: sfheXgfgSKL/css
 
@@ -97,23 +98,25 @@ function PlasmicFeatureCard__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
-      className={classNames(projectcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__long]: hasVariant(variants, "long", "long")
-      })}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        plasmic_library_plasmic_color_type_css.plasmic_tokens,
+        sty.root,
+        { [sty.rootlong]: hasVariant(variants, "long", "long") }
+      )}
     >
       {(hasVariant(variants, "long", "long") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__u82BS, {
-            [sty.freeBox__long__u82BSc95Qv]: hasVariant(
-              variants,
-              "long",
-              "long"
-            )
+            [sty.freeBoxlong__u82BSc95Qv]: hasVariant(variants, "long", "long")
           })}
         >
           <div
             className={classNames(projectcss.all, sty.freeBox__jPq4U, {
-              [sty.freeBox__long__jPq4Uc95Qv]: hasVariant(
+              [sty.freeBoxlong__jPq4Uc95Qv]: hasVariant(
                 variants,
                 "long",
                 "long"
@@ -138,14 +141,14 @@ function PlasmicFeatureCard__RenderFunc(props: {
         as={"div"}
         hasGap={true}
         className={classNames(projectcss.all, sty.freeBox__gpN7L, {
-          [sty.freeBox__long__gpN7Lc95Qv]: hasVariant(variants, "long", "long")
+          [sty.freeBoxlong__gpN7Lc95Qv]: hasVariant(variants, "long", "long")
         })}
       >
         {p.renderPlasmicSlot({
           defaultContents: "Title",
           value: args.title,
           className: classNames(sty.slotTargetTitle, {
-            [sty.slotTargetTitle__long]: hasVariant(variants, "long", "long")
+            [sty.slotTargetTitlelong]: hasVariant(variants, "long", "long")
           })
         })}
 
@@ -154,7 +157,7 @@ function PlasmicFeatureCard__RenderFunc(props: {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           value: args.description,
           className: classNames(sty.slotTargetDescription, {
-            [sty.slotTargetDescription__long]: hasVariant(
+            [sty.slotTargetDescriptionlong]: hasVariant(
               variants,
               "long",
               "long"
@@ -166,11 +169,7 @@ function PlasmicFeatureCard__RenderFunc(props: {
       {(hasVariant(variants, "long", "long") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__xRFg5, {
-            [sty.freeBox__long__xRFg5C95Qv]: hasVariant(
-              variants,
-              "long",
-              "long"
-            )
+            [sty.freeBoxlong__xRFg5C95Qv]: hasVariant(variants, "long", "long")
           })}
         >
           {p.renderPlasmicSlot({

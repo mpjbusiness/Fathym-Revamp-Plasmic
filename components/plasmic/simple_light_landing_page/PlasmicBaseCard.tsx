@@ -36,6 +36,7 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicBaseCard.module.css"; // plasmic-import: Gko4s4ggttZk/css
 
@@ -89,13 +90,19 @@ function PlasmicBaseCard__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
-      className={classNames(projectcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__long]: hasVariant(variants, "long", "long")
-      })}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        plasmic_library_plasmic_color_type_css.plasmic_tokens,
+        sty.root,
+        { [sty.rootlong]: hasVariant(variants, "long", "long") }
+      )}
     >
       <div
         className={classNames(projectcss.all, sty.freeBox__nXgJ, {
-          [sty.freeBox__long__nXgJcVtBd]: hasVariant(variants, "long", "long")
+          [sty.freeBoxlong__nXgJcVtBd]: hasVariant(variants, "long", "long")
         })}
       >
         {p.renderPlasmicSlot({
@@ -103,7 +110,7 @@ function PlasmicBaseCard__RenderFunc(props: {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
-            [sty.slotTargetChildren__long]: hasVariant(variants, "long", "long")
+            [sty.slotTargetChildrenlong]: hasVariant(variants, "long", "long")
           })
         })}
       </div>
@@ -111,11 +118,7 @@ function PlasmicBaseCard__RenderFunc(props: {
       {(hasVariant(variants, "long", "long") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__rq6Vu, {
-            [sty.freeBox__long__rq6VucVtBd]: hasVariant(
-              variants,
-              "long",
-              "long"
-            )
+            [sty.freeBoxlong__rq6VucVtBd]: hasVariant(variants, "long", "long")
           })}
         >
           {p.renderPlasmicSlot({

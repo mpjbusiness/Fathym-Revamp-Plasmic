@@ -39,6 +39,7 @@ import Button from "../../Button"; // plasmic-import: tKVGzilmwKH9/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicPlan.module.css"; // plasmic-import: 0MuyPOIkY8Gc/css
 

@@ -26,9 +26,9 @@
   position: relative;
 }
 .columns {
+  flex-direction: row;
   display: flex;
   position: relative;
-  flex-direction: row;
   width: 100%;
   height: auto;
   max-width: 960px;
@@ -36,9 +36,9 @@
 }
 .columns > :global(.__wab_flex-container) {
   flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
   flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
   min-width: 0;
   margin-left: calc(0px - 16px);
   width: calc(100% + 16px);
@@ -115,14 +115,14 @@
   font-size: 48px;
 }
 .freeBox___4HkQ {
-  display: flex;
   flex-direction: column;
+  display: flex;
   position: relative;
 }
 .freeBox___4HkQ > :global(.__wab_flex-container) {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
   margin-top: calc(0px - 8px);
   height: calc(100% + 8px);
 }
@@ -178,14 +178,14 @@
   font-size: 48px;
 }
 .freeBox__p3ZU {
-  display: flex;
   flex-direction: column;
+  display: flex;
   position: relative;
 }
 .freeBox__p3ZU > :global(.__wab_flex-container) {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
   margin-top: calc(0px - 8px);
   height: calc(100% + 8px);
 }
@@ -244,14 +244,14 @@
   font-size: 48px;
 }
 .freeBox__bXu8F {
-  display: flex;
   flex-direction: column;
+  display: flex;
   position: relative;
 }
 .freeBox__bXu8F > :global(.__wab_flex-container) {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
   margin-top: calc(0px - 8px);
   height: calc(100% + 8px);
 }
@@ -293,9 +293,9 @@
   position: relative;
 }
 .freeBox___9AgLs {
+  flex-direction: column;
   display: flex;
   position: relative;
-  flex-direction: column;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -303,8 +303,8 @@
 }
 .freeBox___9AgLs > :global(.__wab_flex-container) {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
   min-width: 0;
   margin-top: calc(0px - 24px);
   height: calc(100% + 24px);

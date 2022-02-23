@@ -36,6 +36,7 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicSection.module.css"; // plasmic-import: opDBHhnXpCbj/css
 
@@ -104,15 +105,23 @@ function PlasmicSection__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(projectcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__color_dark]: hasVariant(variants, "color", "dark"),
-        [sty.root__color_halfDark]: hasVariant(variants, "color", "halfDark"),
-        [sty.root__hasSubtitle]: hasVariant(
-          variants,
-          "hasSubtitle",
-          "hasSubtitle"
-        )
-      })}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        plasmic_library_plasmic_color_type_css.plasmic_tokens,
+        sty.root,
+        {
+          [sty.rootcolor_dark]: hasVariant(variants, "color", "dark"),
+          [sty.rootcolor_halfDark]: hasVariant(variants, "color", "halfDark"),
+          [sty.roothasSubtitle]: hasVariant(
+            variants,
+            "hasSubtitle",
+            "hasSubtitle"
+          )
+        }
+      )}
     >
       <p.Stack
         as={"div"}
@@ -120,17 +129,17 @@ function PlasmicSection__RenderFunc(props: {
         data-plasmic-override={overrides.content}
         hasGap={true}
         className={classNames(projectcss.all, sty.content, {
-          [sty.content__color_halfDark]: hasVariant(
+          [sty.contentcolor_halfDark]: hasVariant(
             variants,
             "color",
             "halfDark"
           ),
-          [sty.content__hasSubtitle]: hasVariant(
+          [sty.contenthasSubtitle]: hasVariant(
             variants,
             "hasSubtitle",
             "hasSubtitle"
           ),
-          [sty.content__hasTitle]: hasVariant(variants, "hasTitle", "hasTitle")
+          [sty.contenthasTitle]: hasVariant(variants, "hasTitle", "hasTitle")
         })}
       >
         {(hasVariant(variants, "hasTitle", "hasTitle") ? true : true) ? (
@@ -138,7 +147,7 @@ function PlasmicSection__RenderFunc(props: {
             data-plasmic-name={"titleContainer"}
             data-plasmic-override={overrides.titleContainer}
             className={classNames(projectcss.all, sty.titleContainer, {
-              [sty.titleContainer__hasTitle]: hasVariant(
+              [sty.titleContainerhasTitle]: hasVariant(
                 variants,
                 "hasTitle",
                 "hasTitle"
@@ -157,7 +166,7 @@ function PlasmicSection__RenderFunc(props: {
             data-plasmic-name={"subtitleContainer"}
             data-plasmic-override={overrides.subtitleContainer}
             className={classNames(projectcss.all, sty.subtitleContainer, {
-              [sty.subtitleContainer__hasSubtitle]: hasVariant(
+              [sty.subtitleContainerhasSubtitle]: hasVariant(
                 variants,
                 "hasSubtitle",
                 "hasSubtitle"
@@ -176,17 +185,17 @@ function PlasmicSection__RenderFunc(props: {
           data-plasmic-name={"contentContainer"}
           data-plasmic-override={overrides.contentContainer}
           className={classNames(projectcss.all, sty.contentContainer, {
-            [sty.contentContainer__hasSubtitle]: hasVariant(
+            [sty.contentContainerhasSubtitle]: hasVariant(
               variants,
               "hasSubtitle",
               "hasSubtitle"
             ),
-            [sty.contentContainer__hasTitle]: hasVariant(
+            [sty.contentContainerhasTitle]: hasVariant(
               variants,
               "hasTitle",
               "hasTitle"
             ),
-            [sty.contentContainer__hasTitle_hasSubtitle]:
+            [sty.contentContainerhasTitle_hasSubtitle]:
               hasVariant(variants, "hasTitle", "hasTitle") &&
               hasVariant(variants, "hasSubtitle", "hasSubtitle")
           })}

@@ -37,6 +37,7 @@ import BaseCard from "../../BaseCard"; // plasmic-import: Gko4s4ggttZk/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicFaq.module.css"; // plasmic-import: m_bBKXqy__Jt/css
 

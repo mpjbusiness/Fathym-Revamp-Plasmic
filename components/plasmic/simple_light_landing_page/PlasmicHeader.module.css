@@ -25,15 +25,15 @@
   object-fit: cover;
 }
 .freeBox {
+  flex-direction: row;
   display: flex;
   position: relative;
-  flex-direction: row;
   width: auto;
 }
 .freeBox > :global(.__wab_flex-container) {
   flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   margin-left: calc(0px - 20px);
   width: calc(100% + 20px);
 }
@@ -78,7 +78,7 @@
   height: 24px;
 }
 .text___5BOa {
-  color: rgb(255, 255, 255) /* plasmic-token: crly2HpW9GoF */;
+  color: var(--token-crly2HpW9GoF);
 }
 .svg__f9Z1O {
   position: relative;
@@ -96,7 +96,7 @@
   height: 24px;
 }
 .text__vWl4T {
-  color: rgb(255, 255, 255) /* plasmic-token: crly2HpW9GoF */;
+  color: var(--token-crly2HpW9GoF);
 }
 .svg___1EIau {
   position: relative;
@@ -114,7 +114,7 @@
   height: 24px;
 }
 .text__oTrdh {
-  color: rgb(255, 255, 255) /* plasmic-token: crly2HpW9GoF */;
+  color: var(--token-crly2HpW9GoF);
 }
 .svg__mBo9 {
   position: relative;

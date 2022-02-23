@@ -41,6 +41,7 @@ import { useScreenVariants as useScreenVariantsnO3CKcOkrIuu } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_library_plasmic_color_type_css from "../library_plasmic_color_type/plasmic_library_plasmic_color_type.module.css"; // plasmic-import: seaQhLVS4bbjiGvJJrRwyL/projectcss
 import projectcss from "./plasmic_simple_light_landing_page.module.css"; // plasmic-import: pRuurKx4qvQgrn4j4Y2QQH/projectcss
 import sty from "./PlasmicFooter.module.css"; // plasmic-import: LSa4QycSwwp/css
 
@@ -95,7 +96,14 @@ function PlasmicFooter__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
-      className={classNames(projectcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        plasmic_library_plasmic_color_type_css.plasmic_tokens,
+        sty.root
+      )}
     >
       <div className={classNames(projectcss.all, sty.freeBox___7IrYi)} />
 
@@ -144,6 +152,7 @@ function PlasmicFooter__RenderFunc(props: {
           <div className={classNames(projectcss.all, sty.freeBox__btPpR)}>
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__dN9Ri
@@ -167,6 +176,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__mnwfl
@@ -202,6 +212,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__dQfoB
@@ -215,6 +226,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__yRKiE
@@ -228,6 +240,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__zuQzu
@@ -241,6 +254,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__cQdho
@@ -270,6 +284,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link___7GtZ8
@@ -283,6 +298,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__callL
@@ -296,6 +312,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__vkfc8
@@ -309,6 +326,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__vdLqp
@@ -322,6 +340,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__ueCfN
@@ -351,6 +370,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link___6H3Cm
@@ -364,6 +384,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__domo
@@ -377,6 +398,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__xgWw5
@@ -390,6 +412,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link___4FSqb
@@ -403,6 +426,7 @@ function PlasmicFooter__RenderFunc(props: {
 
             <p.PlasmicLink
               className={classNames(
+                projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
                 sty.link__rNnq3
@@ -482,6 +506,7 @@ function PlasmicFooter__RenderFunc(props: {
         <div className={classNames(projectcss.all, sty.freeBox__zrUJ)}>
           <p.PlasmicLink
             className={classNames(
+              projectcss.all,
               projectcss.a,
               projectcss.__wab_text,
               sty.link__epYt9
@@ -495,6 +520,7 @@ function PlasmicFooter__RenderFunc(props: {
 
           <p.PlasmicLink
             className={classNames(
+              projectcss.all,
               projectcss.a,
               projectcss.__wab_text,
               sty.link___7SmvV
